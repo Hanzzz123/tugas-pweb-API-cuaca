@@ -12,7 +12,7 @@ function performSearch(event){
 
     //asynchronous call
 
-   request = $.ajax({
+    request = $.ajax({
         url:'https://api.openweathermap.org/data/2.5/forecast',
         type: "GET",
         data : {
@@ -21,11 +21,11 @@ function performSearch(event){
             units: 'metric'
         }
 
-});
+    });
 
-   //step 3
-   request.done(function (response){
-       formatSearch(response);
+    //step 3
+    request.done(function (response){
+        formatSearch(response);
     });
 
 }
@@ -35,35 +35,39 @@ function formatSearch(jsonObject){
     var city_name1 = jsonObject.city.name;
     var city_weather1 = jsonObject.list[0].weather[0].main;
     var city_temp1 = jsonObject.list[0].main.temp;
-    // <img
-    //     src = "https://api.openweathermap.org/img/wn/${
-    //     day.list[0].weather[0].icon
-    // }@4x.png"
-    //     class ="text-end"
-    // />
+    var iconcode1 = jsonObject.list[0].weather[0].icon;
+    var iconurl1 = "https://openweathermap.org/img/wn/" + iconcode1 + "@4x.png";
+
 
     var date2 = jsonObject.list[1].dt_txt;
     var city_name2 = jsonObject.city.name;
     var city_weather2 = jsonObject.list[1].weather[0].main;
     var city_temp2 = jsonObject.list[1].main.temp;
-    //var icon2 = jsonObject.list[1].weather[0].icon;
+    var iconcode2 = jsonObject.list[1].weather[0].icon;
+    var iconurl2 = "https://openweathermap.org/img/wn/" + iconcode2 + "@4x.png";
+
 
     var date3 = jsonObject.list[2].dt_txt;
     var city_name3 = jsonObject.city.name;
     var city_weather3 = jsonObject.list[2].weather[0].main;
     var city_temp3 = jsonObject.list[2].main.temp
-    //var icon3 = jsonObject.list[2].weather[0].icon;
+    var iconcode3 = jsonObject.list[2].weather[0].icon;
+    var iconurl3 = "https://openweathermap.org/img/wn/" + iconcode3 + "@4x.png";
+
 
     var date4 = jsonObject.list[3].dt_txt;
     var city_name4 = jsonObject.city.name;
     var city_weather4 = jsonObject.list[3].weather[0].main;
     var city_temp4 = jsonObject.list[3].main.temp
-    //var icon4 = jsonObject.list[3].weather[0].icon;
+    var iconcode4 = jsonObject.list[3].weather[0].icon;
+    var iconurl4 = "https://openweathermap.org/img/wn/" + iconcode4 + "@4x.png";
+
 
     $("#date1").text(date1);
     $("#city-name1").text(city_name1);
     $("#city-weather1").text(city_weather1);
     $("#city-temp1").text(city_temp1 + " Celsius");
+    $('#icon1').attr('src', iconurl1);
 
     $("#date2").text(date2);
     $("#city-name2").text(city_name2);
