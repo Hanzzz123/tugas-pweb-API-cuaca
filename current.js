@@ -73,16 +73,27 @@ function formatSearch(jsonObject){
     $("#city-name2").text(city_name2);
     $("#city-weather2").text(city_weather2);
     $("#city-temp2").text(city_temp2 + " Celsius");
+    $('#icon2').attr('src', iconurl2);
 
     $("#date3").text(date3);
     $("#city-name3").text(city_name3);
     $("#city-weather3").text(city_weather3);
     $("#city-temp3").text(city_temp3 + " Celsius");
+    $('#icon3').attr('src', iconurl3);
 
     $("#date4").text(date4);
     $("#city-name4").text(city_name4);
     $("#city-weather4").text(city_weather4);
     $("#city-temp4").text(city_temp4 + " Celsius");
-    // $("#icon4").attr(icon4,icon4);
+    $('#icon4').attr('src', iconurl4);
+
+}
+function showDiv() {
+    document.getElementById('card1').style.display = "block";
+    document.getElementById('card2').style.display = "block";
+    document.getElementById('card3').style.display = "block";
+    document.getElementById('card4').style.display = "block";
+
+
 
 }
